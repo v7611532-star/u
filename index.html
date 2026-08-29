@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دفتر المحل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%20%22%D8%AF%D9%81%D8%AA%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%22%2C%20%22short_name%22%3A%20%22%D8%AF%D9%81%D8%AA%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%22%2C%20%22description%22%3A%20%22%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D9%85%D8%AF%D9%8A%D9%88%D9%86%D9%8A%D8%A9%20%D9%88%D8%AA%D8%B3%D8%AF%D9%8A%D8%AF%20%D8%B9%D9%85%D9%84%D8%A7%D8%A1%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%2317130d%22%2C%20%22theme_color%22%3A%20%22%2317130d%22%2C%20%22orientation%22%3A%20%22portrait%22%2C%20%22dir%22%3A%20%22rtl%22%2C%20%22lang%22%3A%20%22ar%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAOM0lEQVR4nO3dwWHsVBKG0Wb2rFiwI5mJZ6IhHpKZRJjFAM9%2Bz263uqV7q%2Bo/JwHkbt2qT7KBn3795ec/bwBAlH/tvgAAYD0BAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAE%2B%2BP333ZfArCJAIBQfy9/EQCZBAAABBIAEOj7p35vASCPAACAQAIAwnz2tO8tAGQRABDkqyUvAiCHAACAQAIAQjz6dO8tAGQQABDg6FIXATCfAACAQAIAhnv2ad5bAJhNAABAIAEAg736FO8tAMwlAGCos5a3CICZBAAABBIAMNDZT%2B3eAsA8AgAAAgkAGOaqp3VvAWAWAQCDXL2kRQDMIQAAIJAAgCFWPZ17CwAzCAAYwFIGjhIAwGGCA/oTANDcrmUsAqA3AQAAgQQANLb7KXz3Px94ngCApqos3yrXARwjAAAgkACAhqo9dVe7HuBrAgAAAgkAaKbq03bV6wI%2BJgCgkepLtvr1Ad8IAAAIJACgiS5P112uE9IJAGjAUgXOJgCA0wkWqE8AQHFdl2nX64YUAgAAAgkAKKz7U3T364fJBAAUNWV5Tvk5YBoBAACBBAAUNO2pedrPAxMIACjGsgRWEADAEsIGahEAUMj0JTn954NOBAAABBIAUETK03HKzwnVCQAowFIEVhMAwHKCB/YTALBZ6jJM/bmhCgEAAIEEAGyU/hSc/vPDTgIANrH8gJ0EALCVEII9BABsYOm95/OA9QQALGbZARUIAKAEYQRrCQBYyJK7z%2BcD6wgAAAgkAGART7eP8TnBGgIAFrDUgGoEAFCOYILrCQC4mGX2HJ8bXEsAAEAgAQAX8hT7Gp8fXEcAwEUsL6AyAQCUJqTgGgIALmBpncvnCecTAHAyywroQAAALQgrOJcAgBNZUtfy%2BcJ5BAAABBIAcBJPp2v4nOEcAgBOYCkB3QgAoB3BBa8TAPAiy2gPnzu8RgAAQCABAC/wFLqXzx%2BeJwDgSZYP0JkAAFoTYvAcAQBPsHRq8X3AcQIADrJsgAkEADCCMINjBAAcYMkAUwgAYAyBBo8TAPAgy6UH3xM8RgDAAywVYBoBAIwj2OBrAgC%2BYJn05HuD%2BwQAAAQSAHCHp8jefH/wOQEAn7A8gMkEADCakIOPCQD4gKUxi%2B8TfiQA4DuWBZBAAAARhB28JwDgDUsCSCEAgBgCD74RAPAXyyGD7xn%2BTwDAzVIA8ggAII7gAwEAlkEo3zvpBADRLAEglQAAYglAkgkAYhn%2BQDIBAEQTgqQSAEQy9HnL/UAiAUAcwx5AAADcbjdhSB4BQBRDHuD/BADAXwQiSQQAMQx3HuE%2BIYUAIIKhDvCeAAD4jmAkgQBgPMMc4EcCgNEsf57l3mE6AQDwCRHAZAKAsQxvgM8JAIA7hCRTCQBGMrQ5k/uJiQQA4xjWAF8TAAAPEJZMIwAYxZAGeIwAAHiQwGQSAcAYhjMruM%2BYQgAwgqEMcIwAADhIcDKBAKA9wxjgOAFAa5Y/u7j36E4AADxJBNCZAKAtwxfgeQIA4AVClK4EAC0ZugCvEQC0Y/lTjXuSjgQAwAlEAN0IAFoxZAHOIQAATiJQ6UQA0IbhSgfuU7oQALRgqAKcSwAAnEyw0oEAoDzDFOB8AoDSLH%2B6cu9SnQAAuIgIoDIBQFmGJ8B1BADAhYQsVQkASjI0Aa4lACjH8mca9zQVCQCABUQA1QgASjEkAdYQAACLCFwqEQCUYTiSwH1OFQKAEgxFgLUEAMBigpcKBADbGYYA6wkAtrL8SeXeZzcBALCJCGAnAcA2hh/APgIAYCMhzC4CgC0MPYC9BADLWf7wnjPBDgIAoAARwGoCgKUMOYAaBABAEQKZlQQAyxhuAHUIAJaw/OExzgqrCACAYkQAKwgALmeYAdQjALiU5Q/PcXa4mgAAKEoEcCUBwGUML4C6BABAYUKaqwgALmFoAdQmADid5Q/ncqa4ggAAaEAEcDYBwKkMKYAeBACnsfzhWs4YZxIAABBIAHAKTyawhrPGWQQAQDMigDMIAF5mGAH0IwB4ieUPezh7vEoAADQlAniFAOBphg9AXwIAoDEhzrMEAE8xdAB6EwAcZvlDLc4kzxAAAAOIAI4SABxiyADMIAB4mOUPtTmjHCEAACCQAOAhniygB2eVRwkAgGFEAI8QAHzJMAGYRwBwl%2BUPPTm7fEUAAEAgAcCnPEFAb84w9wgAgMFEAJ8RAHzI0ACYTQDwA8sfZnGm%2BYgAAAggAvieAOAdQwIggwDgH5Y/zOaM85YAAIBAAoDb7ebJAFI46/xNAACEEQHcbgKAm2EAkEgAhLP8IZOzjwAAgEACIJgnAMhmBmQTAADBREAuARDKoQfIJgACWf7AW2ZCJgEAgAgIJADCOOQA3G4CIIrlD9xjRmQRAAAQSACEUPbAI8yKHAIAgHdEQAYBEMBhBuB7AmA4yx94htkxnwAAgEACYDAFD7zCDJlNAADwKREwlwAYyqEF4B4BMJDlD5zJTJlJAABAIAEwjFIHrmC2zCMABnFAgSuZMbMIAAAIJACGUObACmbNHAIAgENEwAwCYACHEYCjBEBzlj%2Bwg9nTnwAAgEACoDEFDuxkBvUmAJpy8IAKzKK%2BBAAABBIADSluoBIzqScBAACBBEAzShuoyGzqRwA04oABlZlRvQgAAAgkAJpQ1kAHZlUfAgCAU4mAHgRAAw4TAGcTAMVZ/kBHZld9AgAAAgmAwhQ00JkZVpsAKMrBASYwy%2BoSAAAQSAAUpJiBScy0mgQAAAQSAMUoZWAis60eAVCIAwJMZsbVIgAAIJAAKEIZAwnMujoEAAAEEgAFKGIgiZlXgwDYzEEAEpl9%2BwkAAAgkADZSwEAyM3AvAbCJGx/ALNxJAABAIAGwgeIF%2BMZM3EMAAEAgAbCY0gX4kdm4ngAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAFvv3f/67%2BxIAyjEb1xMAABBIAABAIAEAAIEEAAAEEgAb%2BGMXgG/MxD0EAAAEEgAAEEgAAEAgAbCJ33kBmIU7CQAACCQAACCQAACAQAJgI7/7ApKZgXsJAAAIJAAAIJAA2MwrMCCR2befAACAQAIAAAIJgAK8CgOSmHk1CAAACCQAilDEQAKzrg4BAACBBEAhyhiYzIyrRQAAQCABUIxCBiYy2%2BoRAAAQSAAUpJSBScy0mgQAAAQSAEUpZmACs6wuAQAAgQRAYcoZ6MwMq00AAEAgAVCcggY6MrvqEwANOEhAJ2ZWDwIAAAIJgCYUNdCBWdWHAACAQAKgEWUNVGZG9SIAmnHAgIrMpn4EQEMOGlCJmdSTAACAQAKgKcUNVGAW9SUAGnPwgJ3MoN4EQHMOILCD2dOfAACAQAJgACUOrGTmzCAAhnAggRXMmjkEwCAOJnAlM2YWATCMAwpcwWyZRwAM5KACZzJTZhIAQzmwwBnMkrkEwGAOLvAKM2Q2ATCcAww8w%2ByYTwAEcJCBI8yMDAIghAMNPMKsyCEAgjjYwD1mRBYBEMYBBz5iNuQRAIEcdOAtMyGTAAjlwAO3m1mQTAAEc/AhmxmQTQCEMwAgk7PPT7/%2B8vOfuy%2BCGv74/bfdlwBczOLnb94A8A%2BDAWZzxnlLAPCOAQEzOdt8TwDwA4MCZnGm%2BYi/AeAufxcAfVn83OMNAHcZINCTs8tXBABfMkigF2eWR/gVAIf4lQDUZfFzhDcAHGLAQE3OJkd5A8DTvA2A/Sx%2BnuUNAE8zeGAvZ5BXeAPAKbwNgHUsfs7gDQCnMJBgDWeNs3gDwOm8DYDzWfycTQBwGSEAr7P4uYoA4HJCAI6z%2BLmavwHgcgYZHOPMsII3ACzlbQB8zuJnJQHAFkIAvrH42UEAsJUQIJnFz04CgBKEAEksfioQAJQiBJjM4qcSAUBJQoBJLH4qEgCUJwboyNKnOv8dAMozSOnGPUsHAgAAAgkAWvBERRfuVboQALRhsFKde5ROBACtGLBU5d6kGwFAOwYt1bgn6ci/BkgM/zohj7DMSSEAiCQGeMvSJ5EAgJsgSGPhgwCAH4iBmSx9eE8AwBcEQU8WPtwnAOAJoqAWyx6OEwBwAkGwloUPrxMAcCFh8BqLHq4jAGADYfCeRQ/rCQAoZmocWPJQiwCA5nYFg4UOvQkAAAjkfwYEAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEOh/4lXpBwfYGDwAAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="دفتر المحل">
+<meta name="theme-color" content="#17130d">
+
+<style>
+  :root{
+    --bg: #17130d;
+    --surface: #241d14;
+    --surface-2: #2e2517;
+    --line: #3c331f;
+    --gold: #d4a62b;
+    --gold-soft: #e8c766;
+    --olive: #7c8a4a;
+    --cream: #f2e9d6;
+    --cream-dim: #c9bd9f;
+    --debt: #c1553f;
+    --debt-soft: #3a2119;
+    --paid: #6f9457;
+    --paid-soft: #1f2c19;
+    --radius: 14px;
+    --font-display: 'Cairo', sans-serif;
+    --font-body: 'Tajawal', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(212,166,43,0.07), transparent 55%),
+      var(--bg);
+    color: var(--cream);
+    font-family: var(--font-body);
+    min-height:100vh;
+    padding-bottom: 90px;
+  }
+  h1,h2,h3,.display{ font-family: var(--font-display); }
+
+  /* ---------- header ---------- */
+  header.topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 18px 20px 14px;
+    position:sticky; top:0; z-index:20;
+    background: linear-gradient(180deg, var(--bg) 70%, transparent);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .drop{
+    width:30px; height:36px; position:relative; flex-shrink:0;
+  }
+  .drop svg{ width:100%; height:100%; }
+  .brand-text h1{ font-size:18px; margin:0; font-weight:800; color:var(--gold-soft); letter-spacing:.3px; }
+  .brand-text span{ font-size:11px; color:var(--cream-dim); }
+  .icon-btn{
+    background:var(--surface); border:1px solid var(--line); color:var(--cream);
+    width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+  }
+  .icon-btn:active{ transform:scale(.94); }
+
+  main{ padding: 4px 16px 16px; max-width:520px; margin:0 auto; }
+
+  /* ---------- dashboard ---------- */
+  .hero-card{
+    background: linear-gradient(155deg, var(--surface-2), var(--surface));
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom:16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-card::after{
+    content:"";
+    position:absolute; left:-30px; bottom:-40px; width:140px; height:140px;
+    background: radial-gradient(circle, rgba(212,166,43,0.15), transparent 70%);
+  }
+  .hero-label{ font-size:12px; color:var(--cream-dim); margin-bottom:6px; }
+  .hero-amount{ font-size:34px; font-weight:800; color:var(--gold-soft); font-family:var(--font-display); }
+  .hero-amount small{ font-size:15px; color:var(--cream-dim); font-weight:500; margin-inline-start:4px; }
+  .hero-sub{ display:flex; gap:18px; margin-top:14px; }
+  .hero-sub div{ font-size:12px; color:var(--cream-dim); }
+  .hero-sub b{ display:block; font-size:16px; color:var(--cream); font-family:var(--font-display); }
+
+  .section-title{
+    font-size:14px; color:var(--cream-dim); margin: 18px 4px 10px; display:flex; justify-content:space-between; align-items:center;
+  }
+  .section-title b{ color:var(--cream); font-weight:700; }
+
+  /* ---------- customer list ---------- */
+  .search-bar{
+    display:flex; gap:8px; margin-bottom:12px;
+  }
+  .search-bar input{
+    flex:1; background:var(--surface); border:1px solid var(--line); color:var(--cream);
+    border-radius:10px; padding:11px 14px; font-family:var(--font-body); font-size:14px;
+  }
+  .search-bar input:focus{ outline:none; border-color:var(--gold); }
+  .fab-add{
+    background: var(--gold); color:#1c1710; border:none; border-radius:10px;
+    width:44px; font-size:20px; font-weight:800; cursor:pointer;
+  }
+
+  .customer-row{
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:13px 14px; margin-bottom:9px; cursor:pointer;
+    transition: border-color .15s;
+  }
+  .customer-row:active{ border-color:var(--gold); }
+  .cust-name{ font-weight:700; font-size:15px; }
+  .cust-phone{ font-size:12px; color:var(--cream-dim); margin-top:2px; }
+  .cust-balance{ text-align:left; font-family:var(--font-display); font-weight:800; font-size:15px; }
+  .cust-balance.debt{ color: var(--debt); }
+  .cust-balance.paid{ color: var(--olive); }
+  .cust-balance small{ display:block; font-size:10px; color:var(--cream-dim); font-weight:500; font-family:var(--font-body); }
+
+  .empty-state{
+    text-align:center; padding: 40px 20px; color:var(--cream-dim);
+  }
+  .empty-state .drop{ width:44px; height:52px; margin:0 auto 14px; opacity:.5; }
+
+  /* ---------- customer detail ---------- */
+  .back-row{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .back-row .icon-btn{ }
+  .back-row h2{ font-size:17px; margin:0; }
+
+  .balance-card{
+    border-radius: var(--radius); padding:20px; margin-bottom:16px; text-align:center;
+    border:1px solid var(--line);
+  }
+  .balance-card.debt{ background: linear-gradient(155deg, var(--debt-soft), var(--surface)); }
+  .balance-card.paid{ background: linear-gradient(155deg, var(--paid-soft), var(--surface)); }
+  .balance-card .lbl{ font-size:12px; color:var(--cream-dim); }
+  .balance-card .amt{ font-family:var(--font-display); font-weight:800; font-size:32px; margin-top:6px; }
+  .balance-card.debt .amt{ color: var(--debt); }
+  .balance-card.paid .amt{ color: var(--olive); }
+
+  .action-row{ display:flex; gap:10px; margin-bottom:18px; }
+  .btn{
+    flex:1; padding:12px; border-radius:10px; border:none; font-family:var(--font-display);
+    font-weight:700; font-size:14px; cursor:pointer;
+  }
+  .btn-debt{ background: var(--debt-soft); color: var(--debt); border:1px solid rgba(193,85,63,.4); }
+  .btn-paid{ background: var(--paid-soft); color: var(--olive); border:1px solid rgba(111,148,87,.4); }
+
+  .tx-item{
+    display:flex; justify-content:space-between; align-items:center;
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; margin-bottom:8px;
+  }
+  .tx-left{ display:flex; align-items:center; gap:10px; }
+  .tx-dot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .tx-dot.debt{ background:var(--debt); }
+  .tx-dot.paid{ background:var(--olive); }
+  .tx-note{ font-size:13px; font-weight:600; }
+  .tx-date{ font-size:11px; color:var(--cream-dim); margin-top:2px; }
+  .tx-amount{ font-family:var(--font-display); font-weight:800; font-size:14px; }
+  .tx-amount.debt{ color:var(--debt); }
+  .tx-amount.paid{ color:var(--olive); }
+  .tx-del{ background:none; border:none; color:var(--cream-dim); font-size:16px; cursor:pointer; padding:4px 8px; }
+
+  /* ---------- modal ---------- */
+  .overlay{
+    position:fixed; inset:0; background:rgba(10,8,4,.7); backdrop-filter:blur(2px);
+    display:flex; align-items:flex-end; justify-content:center; z-index:50;
+  }
+  .sheet{
+    background: var(--surface-2); border:1px solid var(--line); border-radius:18px 18px 0 0;
+    width:100%; max-width:520px; padding:20px 20px 26px; animation: up .2s ease-out;
+  }
+  @keyframes up{ from{ transform:translateY(30px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+  .sheet h3{ margin:0 0 16px; font-size:16px; }
+  .field{ margin-bottom:13px; }
+  .field label{ display:block; font-size:12px; color:var(--cream-dim); margin-bottom:6px; }
+  .field input, .field textarea{
+    width:100%; background:var(--surface); border:1px solid var(--line); color:var(--cream);
+    border-radius:10px; padding:11px 13px; font-family:var(--font-body); font-size:14px;
+  }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--gold); }
+  .sheet-actions{ display:flex; gap:10px; margin-top:6px; }
+  .btn-primary{ background:var(--gold); color:#1c1710; }
+  .btn-secondary{ background:var(--surface); color:var(--cream); border:1px solid var(--line); }
+  .btn-cancel-text{ text-align:center; color:var(--cream-dim); font-size:13px; padding:10px; cursor:pointer; }
+
+  .toast{
+    position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+    background:var(--surface-2); border:1px solid var(--gold); color:var(--cream);
+    padding:10px 18px; border-radius:30px; font-size:13px; z-index:100; opacity:0; transition:opacity .2s;
+  }
+  .toast.show{ opacity:1; }
+
+  .loading{ text-align:center; padding:60px 20px; color:var(--cream-dim); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="drop">
+      <svg viewBox="0 0 30 36" fill="none">
+        <path d="M15 2C15 2 3 17 3 24.5C3 30.85 8.37 35 15 35C21.63 35 27 30.85 27 24.5C27 17 15 2 15 2Z" fill="url(#g)" stroke="#d4a62b" stroke-width="1.2"/>
+        <defs><linearGradient id="g" x1="15" y1="2" x2="15" y2="35" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#e8c766"/><stop offset="1" stop-color="#8a6a12"/>
+        </linearGradient></defs>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <h1 id="shopName">دفتر المحل</h1>
+      <span>مديونية وتسديد</span>
+    </div>
+  </div>
+  <div class="icon-btn" onclick="openSettings()">⚙</div>
+</header>
+
+<main id="app">
+  <div class="loading">جاري التحميل...</div>
+</main>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+
+<script>
+/* ---------------- state ---------------- */
+let customers = [];
+let transactions = [];
+let settings = { shopName: 'دفتر المحل' };
+let currentCustomerId = null;
+let searchTerm = '';
+let installTipDismissed = false;
+const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+function dismissInstallTip(){ installTipDismissed = true; render(); }
+
+const todayStr = () => new Date().toISOString().slice(0,10);
+const fmt = n => Number(n).toLocaleString('ar-EG');
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=> t.classList.remove('show'), 1800);
+}
+
+/* ---------------- storage ---------------- */
+async function loadAll(){
+  try{
+    const [custRes, txRes, setRes] = await Promise.allSettled([
+      window.storage.get('customers'),
+      window.storage.get('transactions'),
+      window.storage.get('settings')
+    ]);
+    customers = custRes.status==='fulfilled' && custRes.value ? JSON.parse(custRes.value.value) : [];
+    transactions = txRes.status==='fulfilled' && txRes.value ? JSON.parse(txRes.value.value) : [];
+    if(setRes.status==='fulfilled' && setRes.value){
+      settings = JSON.parse(setRes.value.value);
+    }
+  }catch(e){
+    customers = []; transactions = [];
+  }
+  document.getElementById('shopName').textContent = settings.shopName || 'دفتر المحل';
+  render();
+}
+
+async function saveCustomers(){
+  try{ await window.storage.set('customers', JSON.stringify(customers)); }
+  catch(e){ showToast('حصل خطأ في الحفظ'); }
+}
+async function saveTransactions(){
+  try{ await window.storage.set('transactions', JSON.stringify(transactions)); }
+  catch(e){ showToast('حصل خطأ في الحفظ'); }
+}
+async function saveSettings(){
+  try{ await window.storage.set('settings', JSON.stringify(settings)); }
+  catch(e){ showToast('حصل خطأ في الحفظ'); }
+}
+
+/* ---------------- calculations ---------------- */
+function customerBalance(id){
+  return transactions.filter(t=>t.customerId===id).reduce((sum,t)=>{
+    return sum + (t.type==='debt' ? t.amount : -t.amount);
+  },0);
+}
+function totalOutstanding(){
+  return customers.reduce((s,c)=> s + Math.max(customerBalance(c.id),0), 0);
+}
+
+/* ---------------- rendering ---------------- */
+function render(){
+  if(currentCustomerId){ renderCustomerDetail(); }
+  else{ renderDashboard(); }
+}
+
+function renderDashboard(){
+  const app = document.getElementById('app');
+  const total = totalOutstanding();
+  const withDebt = customers.filter(c=>customerBalance(c.id) > 0).length;
+
+  const filtered = customers
+    .filter(c => c.name.includes(searchTerm))
+    .sort((a,b)=> customerBalance(b.id) - customerBalance(a.id));
+
+  let rows = '';
+  if(customers.length===0){
+    rows = `<div class="empty-state">
+      <div class="drop"><svg viewBox="0 0 30 36" fill="none"><path d="M15 2C15 2 3 17 3 24.5C3 30.85 8.37 35 15 35C21.63 35 27 30.85 27 24.5C27 17 15 2 15 2Z" fill="#d4a62b"/></svg></div>
+      لسه معندكش عملاء<br>اضغط + عشان تضيف أول عميل
+    </div>`;
+  } else if(filtered.length===0){
+    rows = `<div class="empty-state">مفيش نتائج للبحث</div>`;
+  } else {
+    rows = filtered.map(c=>{
+      const bal = customerBalance(c.id);
+      const cls = bal > 0 ? 'debt' : 'paid';
+      const lbl = bal > 0 ? 'عليه' : (bal < 0 ? 'له' : 'متزود');
+      return `<div class="customer-row" onclick="openCustomer('${c.id}')">
+        <div>
+          <div class="cust-name">${escapeHtml(c.name)}</div>
+          ${c.phone ? `<div class="cust-phone">${escapeHtml(c.phone)}</div>` : ''}
+        </div>
+        <div class="cust-balance ${cls}">${fmt(Math.abs(bal))}<small>${lbl}</small></div>
+      </div>`;
+    }).join('');
+  }
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const tipHtml = (!isStandalone() && !installTipDismissed) ? `
+    <div style="background:var(--surface-2); border:1px solid var(--gold); border-radius:12px; padding:12px 14px; margin-bottom:14px; font-size:12.5px; color:var(--cream-dim); display:flex; justify-content:space-between; align-items:center; gap:10px;">
+      <div>${isIOS ? 'ضيف الموقع على شاشتك الرئيسية: من قايمة المشاركة اختار "Add to Home Screen"' : 'ضيف الموقع على شاشتك الرئيسية: من قايمة المتصفح اختار "Add to Home screen" أو "تثبيت التطبيق"'}</div>
+      <div onclick="dismissInstallTip()" style="cursor:pointer; color:var(--gold); font-weight:700; flex-shrink:0;">تمام</div>
+    </div>
+  ` : '';
+
+  app.innerHTML = `
+    ${tipHtml}
+    <div class="hero-card">
+      <div class="hero-label">إجمالي المديونية المستحقة</div>
+      <div class="hero-amount">${fmt(total)}<small>جنيه</small></div>
+      <div class="hero-sub">
+        <div><b>${customers.length}</b>عميل</div>
+        <div><b>${withDebt}</b>عليهم مديونية</div>
+        <div><b>${transactions.length}</b>عملية</div>
+      </div>
+    </div>
+
+    <div class="section-title"><b>العملاء</b></div>
+    <div class="search-bar">
+      <input type="text" placeholder="ابحث بالاسم..." value="${escapeHtml(searchTerm)}" oninput="onSearch(this.value)">
+      <button class="fab-add" onclick="openAddCustomer()">+</button>
+    </div>
+    ${rows}
+  `;
+}
+
+function renderCustomerDetail(){
+  const c = customers.find(x=>x.id===currentCustomerId);
+  if(!c){ currentCustomerId = null; return renderDashboard(); }
+  const bal = customerBalance(c.id);
+  const cls = bal > 0 ? 'debt' : 'paid';
+  const lbl = bal > 0 ? 'عليه للمحل' : (bal < 0 ? 'له عند المحل' : 'الحساب متزود');
+
+  const txs = transactions.filter(t=>t.customerId===c.id).sort((a,b)=> b.date.localeCompare(a.date) || b.createdAt-a.createdAt);
+  const txHtml = txs.length ? txs.map(t=>`
+    <div class="tx-item">
+      <div class="tx-left">
+        <div class="tx-dot ${t.type}"></div>
+        <div>
+          <div class="tx-note">${t.type==='debt' ? 'مديونية' : 'تسديد'}${t.note ? ' — '+escapeHtml(t.note) : ''}</div>
+          <div class="tx-date">${formatDate(t.date)}</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:4px;">
+        <div class="tx-amount ${t.type}">${t.type==='debt'?'+':'-'}${fmt(t.amount)}</div>
+        <button class="tx-del" onclick="deleteTx('${t.id}')">✕</button>
+      </div>
+    </div>
+  `).join('') : `<div class="empty-state">لسه مفيش عمليات</div>`;
+
+  document.getElementById('app').innerHTML = `
+    <div class="back-row">
+      <div class="icon-btn" onclick="closeCustomer()">→</div>
+      <h2>${escapeHtml(c.name)}</h2>
+    </div>
+    <div class="balance-card ${cls}">
+      <div class="lbl">${lbl}</div>
+      <div class="amt">${fmt(Math.abs(bal))} <span style="font-size:16px;">جنيه</span></div>
+    </div>
+    <div class="action-row">
+      <button class="btn btn-debt" onclick="openAddTx('debt')">+ إضافة مديونية</button>
+      <button class="btn btn-paid" onclick="openAddTx('payment')">+ تسجيل تسديد</button>
+    </div>
+    <div class="section-title"><b>سجل العمليات</b></div>
+    ${txHtml}
+  `;
+}
+
+function formatDate(d){
+  const dt = new Date(d+'T00:00:00');
+  return dt.toLocaleDateString('ar-EG', { day:'numeric', month:'long', year:'numeric' });
+}
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+/* ---------------- navigation ---------------- */
+function openCustomer(id){ currentCustomerId = id; render(); }
+function closeCustomer(){ currentCustomerId = null; render(); }
+function onSearch(v){ searchTerm = v; renderDashboard(); }
+
+/* ---------------- modals ---------------- */
+function closeModal(){ document.getElementById('modalRoot').innerHTML = ''; }
+
+function openAddCustomer(){
+  document.getElementById('modalRoot').innerHTML = `
+    <div class="overlay" onclick="if(event.target===this) closeModal()">
+      <div class="sheet">
+        <h3>عميل جديد</h3>
+        <div class="field"><label>الاسم</label><input id="fName" type="text" placeholder="اسم العميل" autofocus></div>
+        <div class="field"><label>رقم الموبايل (اختياري)</label><input id="fPhone" type="tel" placeholder="01xxxxxxxxx"></div>
+        <div class="sheet-actions">
+          <button class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+          <button class="btn btn-primary" onclick="submitAddCustomer()">حفظ</button>
+        </div>
+      </div>
+    </div>`;
+}
+async function submitAddCustomer(){
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  if(!name){ showToast('اكتب اسم العميل'); return; }
+  customers.push({ id: uid(), name, phone, createdAt: Date.now() });
+  await saveCustomers();
+  closeModal();
+  showToast('اتضاف العميل');
+  render();
+}
+
+function openAddTx(type){
+  const isDebt = type==='debt';
+  document.getElementById('modalRoot').innerHTML = `
+    <div class="overlay" onclick="if(event.target===this) closeModal()">
+      <div class="sheet">
+        <h3>${isDebt ? 'إضافة مديونية' : 'تسجيل تسديد'}</h3>
+        <div class="field"><label>المبلغ (جنيه)</label><input id="fAmount" type="number" inputmode="decimal" placeholder="0" autofocus></div>
+        <div class="field"><label>التاريخ</label><input id="fDate" type="date" value="${todayStr()}"></div>
+        <div class="field"><label>ملاحظة (اختياري)</label><input id="fNote" type="text" placeholder="${isDebt ? 'مثلاً: عبوتين زيت' : 'مثلاً: تسديد جزء'}"></div>
+        <div class="sheet-actions">
+          <button class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+          <button class="btn ${isDebt?'btn-debt':'btn-paid'}" style="flex:1;" onclick="submitAddTx('${type}')">حفظ</button>
+        </div>
+      </div>
+    </div>`;
+}
+async function submitAddTx(type){
+  const amount = parseFloat(document.getElementById('fAmount').value);
+  const date = document.getElementById('fDate').value || todayStr();
+  const note = document.getElementById('fNote').value.trim();
+  if(!amount || amount<=0){ showToast('اكتب مبلغ صحيح'); return; }
+  transactions.push({ id: uid(), customerId: currentCustomerId, type, amount, date, note, createdAt: Date.now() });
+  await saveTransactions();
+  closeModal();
+  showToast(type==='debt' ? 'اتسجلت المديونية' : 'اتسجل التسديد');
+  render();
+}
+
+async function deleteTx(id){
+  transactions = transactions.filter(t=>t.id!==id);
+  await saveTransactions();
+  render();
+}
+
+function openSettings(){
+  document.getElementById('modalRoot').innerHTML = `
+    <div class="overlay" onclick="if(event.target===this) closeModal()">
+      <div class="sheet">
+        <h3>الإعدادات</h3>
+        <div class="field"><label>اسم المحل</label><input id="fShop" type="text" value="${escapeHtml(settings.shopName||'')}"></div>
+        <div class="sheet-actions">
+          <button class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+          <button class="btn btn-primary" onclick="submitSettings()">حفظ</button>
+        </div>
+        <div class="btn-cancel-text" style="color:var(--debt); margin-top:10px;" onclick="confirmReset()">مسح كل البيانات</div>
+      </div>
+    </div>`;
+}
+async function submitSettings(){
+  settings.shopName = document.getElementById('fShop').value.trim() || 'دفتر المحل';
+  await saveSettings();
+  document.getElementById('shopName').textContent = settings.shopName;
+  closeModal();
+}
+function confirmReset(){
+  document.getElementById('modalRoot').innerHTML = `
+    <div class="overlay" onclick="if(event.target===this) closeModal()">
+      <div class="sheet">
+        <h3>متأكد؟</h3>
+        <p style="color:var(--cream-dim); font-size:14px;">هيتم مسح كل العملاء والعمليات نهائيًا ومينفعش ترجعها.</p>
+        <div class="sheet-actions">
+          <button class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+          <button class="btn" style="background:var(--debt); color:#fff;" onclick="doReset()">مسح نهائي</button>
+        </div>
+      </div>
+    </div>`;
+}
+async function doReset(){
+  customers = []; transactions = [];
+  await saveCustomers(); await saveTransactions();
+  currentCustomerId = null;
+  closeModal();
+  showToast('اتمسحت البيانات');
+  render();
+}
+
+loadAll();
+</script>
+</body>
+</html>
+https://coruscating-licorice-156f46.netlify.apple-mobile-web-app-capable
